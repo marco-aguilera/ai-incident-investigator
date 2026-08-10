@@ -1,0 +1,21 @@
+{
+  "service": "checkout-api",
+  "time_window": "14:15-14:30",
+  "entries": [
+    {
+      "timestamp": "14:21",
+      "level": "ERROR",
+      "message": "Database connection pool exhausted"
+    },
+    {
+      "timestamp": "14:22",
+      "level": "ERROR",
+      "message": "Timeout waiting for database connection"
+    },
+    {
+      "timestamp": "14:23",
+      "level": "ERROR",
+      "message": "HTTP 500 returned to client"
+    }
+  ]
+}

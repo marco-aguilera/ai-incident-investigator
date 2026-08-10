@@ -1,0 +1,23 @@
+{
+  "service": "checkout-api",
+  "time_window": "14:00-14:30",
+  "metrics": {
+    "api_latency_ms": {
+      "before": 200,
+      "after": 4000
+    },
+    "http_5xx_rate_percent": {
+      "before": 0.2,
+      "after": 8.7
+    },
+    "database_connections": {
+      "maximum": 100,
+      "before": 42,
+      "after": 100
+    },
+    "cpu_utilization_percent": {
+      "before": 48,
+      "after": 51
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "incident_id": "INC-001",
+  "title": "API latency increase",
+  "severity": "SEV-2",
+  "description": "API response times increased from approximately 200ms to 4 seconds over the last 15 minutes.",
+  "symptoms": [
+    "HTTP 5xx errors increased",
+    "CPU utilization remains normal",
+    "Database connections are saturated",
+    "A deployment occurred 20 minutes before the incident"
+  ],
+  "timeline": [
+    "14:00 - Normal API latency around 200ms",
+    "14:10 - Deployment completed",
+    "14:15 - API latency begins increasing",
+    "14:20 - Database connection saturation observed",
+    "14:25 - HTTP 5xx errors increase"
+  ]
+}

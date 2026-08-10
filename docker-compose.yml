@@ -1,0 +1,12 @@
+services:
+  ollama:
+    image: ollama/ollama:0.12.6
+    container_name: ai-investigator-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_data:

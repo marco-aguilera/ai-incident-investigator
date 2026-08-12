@@ -8,5 +8,12 @@ services:
       - ollama_data:/root/.ollama
     restart: unless-stopped
 
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    container_name: ai-investigator-phoenix
+    ports:
+      - "6006:6006"
+    restart: unless-stopped
+
 volumes:
   ollama_data:

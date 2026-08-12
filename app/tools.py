@@ -11,16 +11,16 @@ def load_json(path):
         return json.load(file)
 
 
-def get_service_metrics():
+def get_service_metrics(service: str = "checkout-api"):
     """Return metrics for the checkout API."""
     return load_json(DATA_DIR / "metrics" / "checkout-api.json")
 
 
-def get_recent_deployments():
+def get_recent_deployments(service: str = "checkout-api"):
     """Return recent deployment information for the checkout API."""
     return load_json(DATA_DIR / "deployments" / "checkout-api.json")
 
 
-def get_error_logs():
+def get_error_logs(service: str = "checkout-api"):
     """Return recent error logs for the checkout API."""
     return load_json(DATA_DIR / "logs" / "checkout-api.json")

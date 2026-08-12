@@ -68,11 +68,63 @@ Investigate the following incident:
         ]
 
         while True:
-            response = ollama.chat(
-                model="llama3.2",
-                messages=messages,
-                tools=TOOLS,
-            )
+            with tracer.start_as_current_span("llm.chat") as llm_span:
+                llm_span.set_attribute("llm.provider", "ollama")
+                llm_span.set_attribute("llm.model", "llama3.2")
+
+                response = ollama.chat(
+                    model="llama3.2",
+                    messages=messages,
+                    tools=TOOLS,
+                )
+
+                if hasattr(response, "total_duration"):
+                    llm_span.set_attribute(
+                        "llm.total_duration_ns",
+                        response.total_duration,
+                    )
+
+                if hasattr(response, "load_duration"):
+                    llm_span.set_attribute(
+                        "llm.load_duration_ns",
+                        response.load_duration,
+                    )
+
+                if hasattr(response, "prompt_eval_count"):
+                    llm_span.set_attribute(
+                        "llm.prompt_eval_count",
+                        response.prompt_eval_count,
+                    )
+
+                if hasattr(response, "prompt_eval_duration"):
+                    llm_span.set_attribute(
+                        "llm.prompt_eval_duration_ns",
+                        response.prompt_eval_duration,
+                    )
+
+                if hasattr(response, "eval_count"):
+                    llm_span.set_attribute(
+                        "llm.eval_count",
+                        response.eval_count,
+                    )
+
+                if hasattr(response, "eval_duration"):
+                    llm_span.set_attribute(
+                        "llm.eval_duration_ns",
+                        response.eval_duration,
+                    )
+
+                if hasattr(response, "eval_count") and hasattr(response, "eval_duration"):
+                    if response.eval_duration > 0:
+                        tokens_per_second = (
+                            response.eval_count
+                            / (response.eval_duration / 1_000_000_000)
+                        )
+
+                        llm_span.set_attribute(
+                            "llm.tokens_per_second",
+                            tokens_per_second,
+                     )
 
             messages.append(response["message"])
 

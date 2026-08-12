@@ -11,16 +11,25 @@ def load_json(path):
         return json.load(file)
 
 
-def get_service_metrics(service: str = "checkout-api"):
+def get_service_metrics(
+    service: str = "checkout-api",
+    time_window: str | None = None,
+):
     """Return metrics for the checkout API."""
     return load_json(DATA_DIR / "metrics" / "checkout-api.json")
 
 
-def get_recent_deployments(service: str = "checkout-api"):
+def get_recent_deployments(
+    service: str = "checkout-api",
+    time_window: str | None = None,
+):
     """Return recent deployment information for the checkout API."""
     return load_json(DATA_DIR / "deployments" / "checkout-api.json")
 
 
-def get_error_logs(service: str = "checkout-api"):
+def get_error_logs(
+    service: str = "checkout-api",
+    time_window: str | None = None,
+):
     """Return recent error logs for the checkout API."""
     return load_json(DATA_DIR / "logs" / "checkout-api.json")

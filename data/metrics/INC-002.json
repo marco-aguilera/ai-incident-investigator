@@ -1,0 +1,27 @@
+{
+  "service": "checkout-api",
+  "time_window": "14:00-14:20",
+  "metrics": [
+    {
+      "timestamp": "14:00",
+      "latency_ms": 200,
+      "cpu_percent": 42,
+      "database_connections": 32,
+      "requests_per_minute": 1000
+    },
+    {
+      "timestamp": "14:10",
+      "latency_ms": 350,
+      "cpu_percent": 68,
+      "database_connections": 38,
+      "requests_per_minute": 8000
+    },
+    {
+      "timestamp": "14:15",
+      "latency_ms": 4200,
+      "cpu_percent": 91,
+      "database_connections": 41,
+      "requests_per_minute": 8200
+    }
+  ]
+}

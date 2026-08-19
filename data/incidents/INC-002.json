@@ -1,0 +1,19 @@
+{
+  "incident_id": "INC-002",
+  "title": "HTTP 5xx spike",
+  "severity": "SEV-2",
+  "description": "A sudden increase in incoming traffic caused elevated API latency and a spike in HTTP 5xx responses.",
+  "symptoms": [
+    "HTTP 5xx errors increased",
+    "CPU utilization increased significantly",
+    "Database connections remain within normal limits",
+    "No deployment occurred immediately before the incident"
+  ],
+  "timeline": [
+    "14:00 - Normal traffic around 1,000 requests/minute",
+    "14:05 - Traffic begins increasing",
+    "14:10 - Traffic reaches approximately 8,000 requests/minute",
+    "14:12 - API latency begins increasing",
+    "14:15 - HTTP 5xx errors increase"
+  ]
+}

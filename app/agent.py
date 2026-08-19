@@ -137,6 +137,8 @@ Investigate the following incident:
                 tool_name = call["function"]["name"]
                 arguments = call["function"]["arguments"]
 
+                arguments["incident_id"] = incident["incident_id"]
+
                 result = execute_tool(tool_name, arguments)
 
                 messages.append(

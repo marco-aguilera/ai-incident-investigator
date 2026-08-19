@@ -1,0 +1,13 @@
+{
+  "service": "checkout-api",
+  "deployments": [
+    {
+      "deployment_id": "DEP-8465",
+      "deployment_time": "09:30",
+      "version": "2026.08.07.2",
+      "changes": [
+        "Routine dependency updates"
+      ]
+    }
+  ]
+}

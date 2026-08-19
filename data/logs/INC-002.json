@@ -1,0 +1,26 @@
+{
+  "service": "checkout-api",
+  "time_window": "14:00-14:20",
+  "entries": [
+    {
+      "timestamp": "14:12",
+      "level": "ERROR",
+      "message": "Request processing timeout"
+    },
+    {
+      "timestamp": "14:13",
+      "level": "ERROR",
+      "message": "HTTP 500 returned to client"
+    },
+    {
+      "timestamp": "14:15",
+      "level": "ERROR",
+      "message": "HTTP 503 returned to client"
+    },
+    {
+      "timestamp": "14:16",
+      "level": "ERROR",
+      "message": "Request queue depth exceeded threshold"
+    }
+  ]
+}

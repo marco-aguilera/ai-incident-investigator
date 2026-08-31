@@ -231,6 +231,8 @@ Coming soon / add article link here.
 
 Additional articles will be added as the project evolves.
 
+![AI Incident Investigator Architecture](docs/phoenix-example.png)
+
 ## Disclaimer
 
 This project is an experimental engineering project intended for learning, experimentation, and demonstration.

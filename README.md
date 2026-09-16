@@ -227,7 +227,7 @@ This repository accompanies a series exploring the design and development of the
 
 ## Part 1
 
-Coming soon / add article link here.
+[Building an AI Incident Investigator](https://marcoaguilera.dev/posts/building-an-ai-incident-investigator/)
 
 Additional articles will be added as the project evolves.
 
